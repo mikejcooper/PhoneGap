@@ -1,5 +1,51 @@
 <ion-view view-title="Browse">
   <ion-content>
     <h1>Browse</h1>
-  </ion-content>
+
+    <ion-slide ng-controller="CollapseCtrl" ng-repeat="card in cards" href="#/app/home/{{card.id}}">
+      <div class="Event4"><h1>Thursday</h1></div>
+      <div class="list card">
+        <!-- Top-->
+        <div class="cardTop">
+          <div class="item item-thumbnail-left" href="#">
+            <a href="https://www.google.com"><span class="avatar"><img src="events/CCL.png"></span></a>
+            <div class="cardInfo">
+              <span class="cardTitle">Bristol Freshers Opening Night</span>
+              <br/>
+              <i class="icon ion-ios-location"></i><span class="venue">Pryzm</span>
+            </div>
+          </div>
+        </div>
+        <!-- Middle-->
+        <div class="item item-image">
+          <a href="https://www.google.com"><span class="cardBottomImage" ><img src="events/4.png"></span></a>
+        </div>
+        <!--dropdown list-->
+        <button class="button button-clear button-positive button-small" ng-click="isCollapsed = !isCollapsed">
+          <i class="icon" ng-class="isCollapsed ? 'ion-plus' : 'ion-minus'"></i>
+          More
+        </button>
+        <div collapse="isCollapsed">
+          <div class="item item-icon-left assertive" href="#">
+            <i class="icon ion-clock"></i>
+            Sunday 27th September
+          </div>
+          <div class="item item-icon-left assertive" href="#">
+            <i class="icon ion-ios-location"></i>
+            Lakota - Bristol
+          </div>
+        </div>
+      </div>
+    </ion-slide>
+
+    <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
+      {{playlist.title}}
+    </ion-item>
+
+    <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
+      {{playlist.title}}
+    </ion-item>
+
+
+    </ion-content>
 </ion-view>

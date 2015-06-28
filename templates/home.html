@@ -1,23 +1,58 @@
 <ion-view view-title="Home">
     <ion-content>
-        <h1>Home Screen</h1>
-
-        <a href=".../templates/Facebook"></a>
+        <ion-slide-box on-slide-changed="slideHasChanged($index)">
 
 
-        <!--<ion-slide-box on-slide-changed="slideHasChanged($index)">-->
-            <!--<ion-slide>-->
-                <!--<div class="box blue"><h1>BLUE</h1></div>-->
-                <!--<img src="img/freshers.png">-->
 
-            <!--</ion-slide>-->
-            <!--<ion-slide>-->
-                <!--<div class="box yellow"><h1>YELLOW</h1></div>-->
-            <!--</ion-slide>-->
-            <!--<ion-slide>-->
-                <!--<div class="box pink"><h1>PINK</h1></div>-->
-            <!--</ion-slide>-->
-        <!--</ion-slide-box>-->
+
+        <ion-slide ng-controller="HomeCtrl as settings" ng-repeat="card in cards" href="#/app/home/{{card.id}}">
+            <div class="Event4"><h1>{{card.day}}</h1></div>
+            <div class="list card">
+                <!-- Top-->
+                <div class="cardTop">
+                    <div class="item item-thumbnail-left" href="#">
+                        <a id = "avatar" ng-href="fb://profile/655146487898613Q" ng-click="checkApp(card.avatarURL, 'avatar')"><span class="avatar"><img src={{card.avatarImg}}></span></a>
+                        <div class="cardInfo">
+                            <span class="cardTitle">{{card.title}}</span>
+                            <br/>
+                            <a id = "maps" ng-href="https://www.google.co.uk/maps/search/" ng-click="changeLink(card.location)" >
+                                <i class="icon ion-ios-location custom-locationIcon"></i><span class="venue">{{card.venue}}</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Middle-->
+                <div class="item item-image">
+                    <a id = "cover" ng-href="" ng-click = "checkApp(card.coverURL, 'cover')"><span class="cardBottomImage"><img src={{card.coverImg}}></span></a>
+                </div>
+                <!--dropdown list-->
+                <button class="button button-clear button-positive button-small" ng-click="isCollapsed = !isCollapsed">
+                    <i class="icon custom-locationIcon" ng-class="isCollapsed ? 'ion-plus' : 'ion-minus'"></i>
+                    More
+                </button>
+                <div collapse="isCollapsed">
+                    <div>
+                        <div class="item item-icon-left assertive">
+                        <i class="icon ion-clock"></i>
+                        {{card.date}}
+                    </div>
+                    <a id = "maps2" ng-href="https://www.google.co.uk/maps/search/" ng-click="changeLink(card.location)" >
+                        <div class="item item-icon-left assertive">
+                        <i class="icon ion-ios-location"></i>
+                        {{card.location}}
+                    </div></a>
+                </div>
+            </div>
+        </ion-slide>
+
+
+
+        </ion-slide-box>
 
     </ion-content>
 </ion-view>
+
+
+
+
+
