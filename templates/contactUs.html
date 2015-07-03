@@ -1,0 +1,45 @@
+<ion-view view-title="Contact Us">
+  <ion-nav-buttons side="left">
+    <a class="button button-icon button-outline ion-navicon" menu-toggle="left"></a>
+  </ion-nav-buttons>
+
+  <ion-content>
+    <div class="bar bar-header" style = "top: -20%">
+      <div class="title">Contact Us</div>
+    </div>
+    <div style = "margin: 7%; margin-top: 2%" ng-controller="phoneCtrl">
+
+        <br/><br/>
+        <b>
+        Senior resident (duty mobile):
+        </b>
+        <br/>
+
+        <span> Unite House -
+        <a ng-click = 'showConfirm("07717701058","University Security")'>07717701058</a>
+        </span>
+
+        <br/>
+
+        <span> Colston Street: -
+        <a ng-click = 'showConfirm("07815700570","University Security")'>07815700570</a>
+        </span>
+
+        <br/><br/>
+
+        <span> University Security -
+        <a ng-click = 'showConfirm("0117 928 7848","University Security")'>0117 928 7848</a>
+        </span>
+
+        <br/>
+        <br/>
+        <span> Security Services Website:
+        <div ng-controller="HomeCtrl"> <a ng-click = "changeLinkImages('https://www.bristol.ac.uk/securityservices/','contact')">http://www.bristol.ac.uk/securityservices/ </a></div>
+        </span>
+      </div>
+
+
+    </ion-content>
+  </ion-view>
+
+
