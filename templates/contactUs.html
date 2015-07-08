@@ -1,15 +1,18 @@
-<ion-view view-title="Contact Us">
+<html>
+
+<head>
+    <link href="css/contactUs.css" type="text/css" rel="stylesheet"/>
+</head>
+
+<body>
+<ion-view view-title="Contact Us" class = "background">
   <ion-nav-buttons side="left">
     <a class="button button-icon button-outline ion-navicon" menu-toggle="left"></a>
   </ion-nav-buttons>
 
   <ion-content>
-    <div class="bar bar-header" style = "top: -20%">
-      <div class="title">Contact Us</div>
-    </div>
-    <div style = "margin: 7%; margin-top: 2%" ng-controller="phoneCtrl">
+    <div class = "body" ng-controller="phoneCtrl">
 
-        <br/><br/>
         <b>
         Senior resident (duty mobile):
         </b>
@@ -33,7 +36,7 @@
 
         <br/>
         <br/>
-        <span> Security Services Website:
+        <span> Security Services <b>Website</b>:
         <div ng-controller="HomeCtrl"> <a ng-click = "changeLinkImages('https://www.bristol.ac.uk/securityservices/','contact')">http://www.bristol.ac.uk/securityservices/ </a></div>
         </span>
       </div>
@@ -41,5 +44,7 @@
 
     </ion-content>
   </ion-view>
+</body>
+</html>
 
 

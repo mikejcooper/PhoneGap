@@ -1,27 +1,32 @@
+<html>
+
+<head>
+    <link href="css/home.css" type="text/css" rel="stylesheet"/>
+</head>
+
+<body>
 <ion-view view-title="Home" class = "background">
-    <ion-content style = "padding-top: 25px;">
+    <ion-content class = "homeFrame">
         <ion-list>
 
             <ion-slide ng-controller="HomeCtrl as settings" ng-repeat="card in cards" href="#/app/home/{{card.id}}">
 
 
                 <div class="background reduceDiv item item-thumbnail-left" href="#">
-                    <span class="cardCalendar"><i class="icon ion-ios-calendar-outline"></i></span>
-                    <span class="cardDay">{{card.day}}</span>
+                    <i class="icon ion-ios-calendar-outline cardCalendar"></i>
+                    <div class="cardDay">{{card.day}}</div>
                 </div>
-                <div class="list card" style = "border: groove;">
+                <div class="card">
 
                     <!-- Top-->
                     <div class="cardTop">
                         <div class="item item-thumbnail-left" href="#">
                             <a id = "avatar" ng-href="fb://profile/655146487898613Q" ng-click="changeLinkImages(card.avatarURL, 'avatar')"><span class="avatar"><img src={{card.avatarImg}}></span></a>
-                            <div class="cardInfo">
                                 <span class="cardTitle">{{card.title}}</span>
                                 <br/>
                                 <a id = "maps" ng-href="https://www.google.co.uk/maps/search/" ng-click="changeLinkMaps(card.location)" >
                                     <i class="icon ion-ios-location custom-locationIcon"></i><span class="venue">{{card.venue}}</span>
                                 </a>
-                            </div>
                         </div>
                     </div>
                     <!-- Middle-->
@@ -45,7 +50,7 @@
                                     {{card.location}}
                                 </div>
                             </a>
-                        </div>
+                            </div>
                     </div>
                 </div>
 
@@ -56,3 +61,5 @@
 
     </ion-content>
 </ion-view>
+</body>
+</html>
